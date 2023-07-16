@@ -14,7 +14,7 @@ class LogInAPI(MethodView):
     def get(self):
         # If status is Created, make sure user activates account before redireting to username.
         if g.user:
-            return redirect(url_for('dashboard_api'))
+            return redirect(url_for('home_api'))
         
         form = LoginForm()
         return render_template('login.html', form=form)
@@ -39,8 +39,7 @@ class LogInAPI(MethodView):
                 return redirect(url_for('login_api'))
             
             session['user'] = user_data.get('user_name')
-            flash('Logged In Successfully!!!', 'success')
-            return redirect(url_for('dashboard_api'))
+            return redirect(url_for('home_api'))
         
         except AuthUserError as e:
             flash(str(e), 'danger')

@@ -5,5 +5,4 @@ class LogOutAPI(MethodView):
 
     def get(self):
         session.pop('user',None)
-        flash("User logged out successfully",'success')
-        return redirect(url_for('my_brokers_api'))
+        return redirect(url_for('home_api'))

@@ -1,10 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
-        {% if session['user'] %}
-            <a class="navbar-brand" href="{{ url_for('dashboard_api')}}">Algo Trader</a>
-        {% else %}
-            <a class="navbar-brand" href="{{ url_for('home_api')}}">Algo Trader</a>
-        {% endif %}
+        
+        <a class="navbar-brand" href="{{ url_for('home_api')}}">YT Downloader</a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,11 +15,11 @@
                 
             </ul>
             {% endif %}
-            
+        
             {% if session['user'] %}
             <ul class="nav navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('dashboard_api') }}">Dashboard</a>
+                    <a class="nav-link" href="{{ url_for('home_api') }}">Dashboard</a>
                 </li>
                 
                 <li class="nav-item dropdown">
