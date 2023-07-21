@@ -10,7 +10,7 @@
             <ul class="nav navbar-nav">
                 
                 <li class="nav-item">
-                    <a href="{{ url_for('my_profile_api')}}" class="nav-link">My Profile</a>
+                    <a href="{{ url_for('my_profile_api')}}" class="nav-link">Analysis</a>
                 </li>
                 
             </ul>
@@ -18,10 +18,29 @@
         
             {% if session['user'] %}
             <ul class="nav navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('home_api') }}">Dashboard</a>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Download</a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                        <a href="{{ url_for('home_api') }}" class="dropdown-item">Video</a> 
+                        <a href="{{ url_for('download_playlist_api') }}" class="dropdown-item">Playlist</a>
+                        <a href="{{ url_for('download_channel_api') }}" class="dropdown-item">Channel</a>
+                    </div>
                 </li>
                 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home_api') }}">My Downloads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home_api') }}">History</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Workflow</a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                        <a href="{{ url_for('my_profile_api') }}" class="dropdown-item">Create</a>
+                        <a href="#" class="dropdown-item">Enquire</a>
+                        <a href="#" class="dropdown-item">Amend</a>
+                    </div>
+                </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{session['user']}}</a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
