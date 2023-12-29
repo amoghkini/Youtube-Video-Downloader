@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
         
-        <a class="navbar-brand" href="{{ url_for('home_api')}}">YT Downloader</a>
+        <a class="navbar-brand" href="{{ url_for('home_api')}}">Youtube Downloader</a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,23 +44,23 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{session['user']}}</a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-                        <a href="{{ url_for('my_profile_api') }}" class="dropdown-item">My profile</a>
+                        <a href="{{ url_for('home_api') }}" class="dropdown-item">My profile</a>
                         <a href="#" class="dropdown-item">Admin</a>
                         <a href="#" class="dropdown-item">Credits</a>
                         <a href="#" class="dropdown-item">Features</a>
-                        <a href="{{ url_for('about_us_api') }}" class="dropdown-item">About us</a>
+                        <a href="{{ url_for('home_api') }}" class="dropdown-item">About us</a>
                         <div class="dropdown-divider"></div>
-                        <a href="{{ url_for('logout_api') }}" class="dropdown-item">Logout</a>
+                        <a href="{{ url_for('home_api') }}" class="dropdown-item">Logout</a>
                     </div>
                 </li>
             </ul>
             {% else %}
             <ul class="nav navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('sign_up_api') }}">Sign Up</a>
+                    <a class="nav-link" href="{{ url_for('home_api') }}">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('login_api') }}">Login</a>
+                    <a class="nav-link" href="{{ url_for('home_api') }}">Login</a>
                 </li>
             </ul>
             {% endif %}
